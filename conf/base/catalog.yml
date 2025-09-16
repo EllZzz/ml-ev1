@@ -1,4 +1,14 @@
-# Here you can define all your datasets by using simple YAML syntax.
-#
+# Define all your datasets by using simple YAML syntax.
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+cardio:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/cardio_data_processed.csv
+  load_args:
+    encoding: utf-8
+
+lifestyle:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/smoking_driking_dataset_Ver01.csv
+  load_args:
+    encoding: utf-8
