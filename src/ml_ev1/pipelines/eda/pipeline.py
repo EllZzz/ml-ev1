@@ -6,7 +6,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=describe_data,
-                inputs="cardio_data",
+                inputs="cardio",
                 outputs="cardio_summary",
                 name="describe_cardio_node"
             )

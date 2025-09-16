@@ -1,6 +1,6 @@
-# Define all your datasets by using simple YAML syntax.
-# Documentation for this file format can be found in "The Data Catalog"
-# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+# Catálogo de datasets
+
+# Datasets de entrada (raw)
 cardio:
   type: pandas.CSVDataset
   filepath: data/01_raw/cardio_data_processed.csv
@@ -14,7 +14,14 @@ lifestyle:
     encoding: utf-8
 
 heart_data:
-  type: pandas.CSVDataSet
+  type: pandas.CSVDataset
   filepath: data/01_raw/heart_2020_cleaned.csv
   load_args:
     encoding: utf-8
+
+# Datasets intermedios (limpios/procesados)
+cardio_clean:
+  type: pandas.CSVDataset  # persistido en CSV
+  filepath: data/02_intermediate/cardio_data_processed_clean.csv
+  save_args:
+    index: False
