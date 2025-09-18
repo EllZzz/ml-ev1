@@ -1,27 +1,56 @@
-# Catálogo de datasets
+# ========================
+# Datasets de entrada
+# ========================
 
-# Datasets de entrada (raw)
 cardio:
   type: pandas.CSVDataset
   filepath: data/01_raw/cardio_data_processed.csv
   load_args:
-    encoding: utf-8
+    index_col: 0
 
 lifestyle:
   type: pandas.CSVDataset
   filepath: data/01_raw/smoking_driking_dataset_Ver01.csv
   load_args:
-    encoding: utf-8
+    index_col: 0
 
 heart_data:
   type: pandas.CSVDataset
   filepath: data/01_raw/heart_2020_cleaned.csv
   load_args:
-    encoding: utf-8
+    index_col: 0
 
-# Datasets intermedios (limpios/procesados)
+# ========================
+# Salidas limpias
+# ========================
+
 cardio_clean:
-  type: pandas.CSVDataset  # persistido en CSV
+  type: pandas.CSVDataset
   filepath: data/02_intermediate/cardio_data_processed_clean.csv
   save_args:
     index: False
+
+lifestyle_clean:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/smoking_drinking_clean.csv
+  save_args:
+    index: False
+
+heart_clean:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/heart_2020_cleaned_clean.csv
+  save_args:
+    index: False
+
+# ========================
+# Resúmenes (solo en memoria)
+# ========================
+
+cardio_summary:
+  type: MemoryDataset
+
+lifestyle_summary:
+  type: MemoryDataset
+
+heart_summary:
+  type: MemoryDataset
